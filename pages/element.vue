@@ -1,7 +1,9 @@
 <template>
   <div>
     <el-button @click="visible = true">Button</el-button>
-    <el-dialog :visible.sync="visible"><p>処理されました</p></el-dialog>
+    <el-dialog :visible.sync="visible" title="確認"
+      ><p>処理されました</p></el-dialog
+    >
   </div>
 </template>
 <script>

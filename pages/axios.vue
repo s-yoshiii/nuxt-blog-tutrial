@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>{{ ip }}</p>
-    <button>IPアドレスを取得</button>
+    <button @click="getIp">IPアドレスを取得</button>
   </div>
 </template>
 <script>
@@ -10,6 +10,11 @@ export default {
     return {
       ip: "0.0.0.0",
     };
+  },
+  methods: {
+    async getIp() {
+      this.ip = await this.$axios.$get("http://icanhazip.com");
+    },
   },
 };
 </script>
